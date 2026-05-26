@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>经济学研究学者模拟器</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-label="学术江湖状态栏">
+        <div>
+          <p class="eyebrow">Academic Jianghu Simulator</p>
+          <h1>经济学研究学者模拟器</h1>
+        </div>
+        <div class="career-badge">
+          <span id="timeLabel">第 1 学年 · Q1</span>
+          <strong id="rankLabel">博士候选人</strong>
+          <div class="save-tools" aria-label="存档工具">
+            <button class="mini-btn" id="saveGameBtn" type="button">存档</button>
+            <button class="mini-btn" id="loadGameBtn" type="button">读档</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel profile-panel">
+          <div class="portrait" aria-hidden="true">
+            <img src="assets/academic-network.svg" alt="" />
+            <div class="portrait-grid"></div>
+            <div class="portrait-line line-a"></div>
+            <div class="portrait-line line-b"></div>
+            <div class="portrait-dot dot-a"></div>
+            <div class="portrait-dot dot-b"></div>
+          </div>
+          <div class="name-row">
+            <div>
+              <p class="muted">研究者档案</p>
+              <h2 id="scholarName">林知微</h2>
+            </div>
+            <button class="icon-btn" id="rerollBtn" title="重开人物" aria-label="重开人物">↻</button>
+          </div>
+          <div class="field-card">
+            <span id="fieldCode">D</span>
+            <div>
+              <strong id="fieldName">微观经济学</strong>
+              <p id="fieldDesc">机制设计、产业组织、行为实验与平台市场。</p>
+            </div>
+          </div>
+          <div class="submission-box">
+            <div class="section-head">
+              <p class="muted">投稿进度</p>
+              <strong>审稿轨道</strong>
+            </div>
+            <div id="submissionBox" class="submission-list"></div>
+          </div>
+          <div class="network-box">
+            <div class="section-head">
+              <p class="muted">关系网</p>
+              <strong>合作网络</strong>
+            </div>
+            <div id="relationNetwork" class="relation-network"></div>
+          </div>
+          <div class="trait-list" id="traitList"></div>
+        </aside>
+
+        <section class="main-stage">
+          <section class="panel research-board">
+            <div class="board-head">
+              <div>
+                <p class="muted">本季度策略</p>
+                <h2 id="chapterTitle">开题：在问题和识别之间取舍</h2>
+              </div>
+              <button id="nextQuarterBtn" class="primary-btn">进入下季度</button>
+            </div>
+
+            <div class="action-points" aria-live="polite">
+              <span>行动点</span>
+              <div id="apDots" class="ap-dots"></div>
+              <strong id="apLabel">3 / 3</strong>
+            </div>
+
+            <div id="choicePanel" class="choice-panel hidden"></div>
+            <div id="journalPanel" class="journal-panel hidden"></div>
+
+            <div class="decision-grid">
+              <label>
+                <span>当前项目</span>
+                <select id="projectSelect"></select>
+              </label>
+              <label>
+                <span>研究议题</span>
+                <select id="topicSelect"></select>
+              </label>
+              <label>
+                <span>研究方法</span>
+                <select id="methodSelect"></select>
+              </label>
+              <label>
+                <span>季度重心</span>
+                <select id="focusSelect"></select>
+              </label>
+            </div>
+
+            <div class="paper-card">
+              <div>
+                <p class="muted">手头项目</p>
+                <h3 id="paperTitle">等待选题形成工作论文</h3>
+              </div>
+              <div class="paper-meter">
+                <span>完成度</span>
+                <div class="meter"><i id="paperProgress"></i></div>
+              </div>
+            </div>
+
+            <div class="project-tools">
+              <button id="newProjectBtn" class="secondary-btn">新开项目</button>
+              <button id="moveSchoolBtn" class="secondary-btn">查看跳槽</button>
+              <button id="submitProjectBtn" class="secondary-btn">投稿当前项目</button>
+              <div id="projectList" class="project-list"></div>
+            </div>
+
+            <div class="action-row">
+              <button class="action-btn" data-action="read">精读文献 · 1点</button>
+              <button class="action-btn" data-action="data">整理数据 · 1点</button>
+              <button class="action-btn" data-action="model">打磨模型 · 1点</button>
+              <button class="action-btn" data-action="seminar">参加 Seminar · 1点</button>
+              <button class="action-btn" data-action="network">经营合作网络 · 1点</button>
+              <button class="action-btn" data-action="student">带学生写作 · 1点</button>
+              <button class="action-btn" data-action="faculty">组织教师合作 · 1点</button>
+              <button class="action-btn" data-action="rest">恢复心力 · 1点</button>
+            </div>
+          </section>
+
+          <section class="split-row">
+            <section class="panel stat-panel">
+              <div class="section-head">
+                <p class="muted">学术资本</p>
+                <strong>指标</strong>
+              </div>
+              <div id="counters" class="counters"></div>
+              <div id="stats" class="stats"></div>
+              <div id="schoolBox" class="school-box"></div>
+              <div id="teamBox" class="team-box"></div>
+            </section>
+
+            <section class="panel event-panel">
+              <div class="section-head">
+                <p class="muted">季度记录</p>
+                <strong>江湖日志</strong>
+              </div>
+              <ol id="eventLog" class="event-log"></ol>
+            </section>
+          </section>
+
+          <section class="panel output-panel">
+            <div class="section-head">
+              <p class="muted">我的成果</p>
+              <strong>发表与项目组合</strong>
+            </div>
+            <div id="outputList" class="output-list"></div>
+            <div id="collabStories" class="story-list"></div>
+          </section>
+        </section>
+
+        <aside class="panel world-panel">
+          <div class="section-head">
+            <p class="muted">世界架构</p>
+            <strong>学术江湖</strong>
+          </div>
+          <div class="rank-track" id="rankTrack"></div>
+          <div class="hotspot-box">
+            <p class="muted">现实热点映射</p>
+            <ul id="hotspotList"></ul>
+          </div>
+          <div class="promotion-box">
+            <p class="muted">下次晋升</p>
+            <div id="promotionHint"></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

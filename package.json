@@ -1,0 +1,12 @@
+{
+  "name": "wenwan-scholar-sim",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build-standalone.mjs",
+    "serve": "python3 -m http.server 5181",
+    "deploy:vercel": "npm run build && vercel deploy dist --prod",
+    "deploy:netlify": "npm run build && netlify deploy --dir=dist --prod"
+  }
+}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">学术网络图</title>
+  <desc id="desc">经济学研究者在论文、期刊、基金、研讨会和政策咨询之间形成的关系网络。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f6f5e"/>
+      <stop offset="0.55" stop-color="#172126"/>
+      <stop offset="1" stop-color="#355f96"/>
+    </linearGradient>
+    <filter id="soft">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#071014" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="900" height="520" rx="24" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#fffaf0" stroke-width="1">
+    <path d="M0 86h900M0 172h900M0 258h900M0 344h900M0 430h900"/>
+    <path d="M100 0v520M200 0v520M300 0v520M400 0v520M500 0v520M600 0v520M700 0v520M800 0v520"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-width="5" opacity=".82">
+    <path d="M190 310C290 185 382 161 510 230S686 272 746 142" stroke="#f1c46a"/>
+    <path d="M148 172C260 236 333 356 472 328S660 270 777 348" stroke="#79d1c6"/>
+    <path d="M252 420C342 316 414 276 528 286S672 222 718 92" stroke="#e58b74"/>
+    <path d="M104 260C202 258 268 112 386 118S587 170 676 246" stroke="#b7d9ff"/>
+  </g>
+  <g filter="url(#soft)">
+    <circle cx="190" cy="310" r="33" fill="#fffaf0"/>
+    <circle cx="510" cy="230" r="42" fill="#f1c46a"/>
+    <circle cx="746" cy="142" r="30" fill="#e58b74"/>
+    <circle cx="148" cy="172" r="31" fill="#79d1c6"/>
+    <circle cx="472" cy="328" r="36" fill="#fffaf0"/>
+    <circle cx="777" cy="348" r="28" fill="#f1c46a"/>
+    <circle cx="252" cy="420" r="27" fill="#e58b74"/>
+    <circle cx="718" cy="92" r="25" fill="#79d1c6"/>
+    <circle cx="386" cy="118" r="29" fill="#fffaf0"/>
+  </g>
+  <g font-family="Inter, Noto Sans SC, sans-serif" font-size="24" font-weight="800" fill="#172126" text-anchor="middle">
+    <text x="190" y="318">D</text>
+    <text x="510" y="238">AI</text>
+    <text x="746" y="150">Q</text>
+    <text x="148" y="180">J</text>
+    <text x="472" y="336">NBER</text>
+    <text x="777" y="356">Top</text>
+    <text x="252" y="428">RCT</text>
+    <text x="718" y="100">G</text>
+    <text x="386" y="126">E</text>
+  </g>
+  <g fill="#fffaf0" font-family="Inter, Noto Sans SC, sans-serif">
+    <text x="56" y="70" font-size="32" font-weight="800">Research Agenda Map</text>
+    <text x="56" y="108" font-size="18" opacity=".78">topic · method · seminar · journal · grant</text>
+  </g>
+</svg>
